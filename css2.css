@@ -1,0 +1,424 @@
+/* Importação de fontes e ícones */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+/* Font Awesome para ícones */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0d0d0d; /* Fundo escuro */
+    color: #e0e0e0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+/* Scrollbar estilizada */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #00ffcc;
+    border-radius: 5px;
+    border: 2px solid #1a1a1a;
+}
+
+a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00e6b8;
+}
+
+/* Header principal */
+.main-header {
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    border-bottom: 2px solid #00ffcc;
+    box-shadow: 0 2px 10px rgba(0, 255, 204, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que os elementos se quebrem em telas menores */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.orion-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px #00ffcc);
+}
+
+.system-name {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffcc;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: #e0e0e0;
+    font-size: 1em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul li a i {
+    margin-right: 8px;
+    color: #00ffcc; /* Cor dos ícones */
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.equipment-dashboard h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffcc;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equipment-dashboard h2 i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+/* Barra de busca e filtro */
+.search-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #005544;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #005544;
+    border-radius: 5px;
+    background-color: #0d0d0d;
+    color: #00ffcc;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    outline: none;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.search-input:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+}
+
+.filter-group label {
+    margin-right: 10px;
+    color: #bbb;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid #005544;
+    border-radius: 5px;
+    background-color: #0d0d0d;
+    color: #00ffcc;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    outline: none;
+    appearance: none; /* Remove estilo padrão do select */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ffcc'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Ícone de seta customizado */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    border-color: #00ffcc;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+/* Grid de equipamentos (Cards) */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo com cards de tamanho flexível */
+    gap: 30px;
+}
+
+.equipment-card {
+    background-color: #1a1a1a;
+    border: 1px solid #005544;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 255, 204, 0.3);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.card-icon {
+    font-size: 2em;
+    color: #00ffcc;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 204, 0.5));
+}
+
+.card-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3em;
+    color: #00ffcc;
+    line-height: 1.3;
+}
+
+.card-body p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.card-body p strong {
+    color: #bbb;
+}
+
+.card-body .description {
+    font-size: 0.85em;
+    color: #999;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #333;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 10px;
+}
+
+.status-badge.operational {
+    background-color: #005544;
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+}
+
+.status-badge.maintenance {
+    background-color: #554400;
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+}
+
+.status-badge.critical {
+    background-color: #550000;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    animation: pulse-red 2s infinite; /* Animação para status crítico */
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+}
+
+.card-footer {
+    margin-top: auto; /* Empurra o rodapé do card para baixo */
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    font-size: 0.75em;
+    color: #777;
+    text-align: right;
+}
+
+/* Footer principal */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #005544;
+    font-size: 0.85em;
+}
+
+.main-footer p {
+    margin-bottom: 5px;
+}
+
+/* Design responsivo */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-area {
+        margin-bottom: 15px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .main-nav ul li a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .system-name {
+        font-size: 1.5em;
+    }
+
+    .main-content {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .equipment-dashboard h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .search-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+
+    .search-input {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .filter-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filter-select {
+        flex-grow: 1;
+    }
+
+    .equipment-grid {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+    }
+
+    .equipment-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .main-header {
+        padding: 10px 15px;
+    }
+
+    .system-name {
+        font-size: 1.3em;
+    }
+
+    .card-header h3 {
+        font-size: 1.1em;
+    }
+}
